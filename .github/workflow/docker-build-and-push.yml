@@ -2,14 +2,14 @@
 # Made by Abhishek Bhatia
 # GitHub Actions workflow to build and push Docker image for the Discord bot.
 
-name: Build and Deploy AbhiiouslyBot
+name: Build and Push Docker Image
 
 on:
   push:
     branches:
       - main
   workflow_dispatch: 
-  
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -36,5 +36,5 @@ jobs:
         context: .
         push: true
         tags: |
-          abhiiously/abhiiouslybot:latest
-          abhiiously/abhiiouslybot:${{ env.BUILD_NUMBER }}
+          abhiiously/abhiiously.io:latest
+          abhiiously/abhiiously.io:${{ env.BUILD_NUMBER }}
